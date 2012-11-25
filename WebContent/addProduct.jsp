@@ -8,33 +8,41 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div style="margin:auto;">
+	<table style="margin: auto;">
+		<tr>
+			<td>
+				<form id="form1" action="/HibernateStudying/CreateProductAction"
+					method="post">
 
-		<form id="form1" action="/HibernateStudying/CreateProductAction" method="post">
+					<fieldset>
+						<legend>Add New Product</legend>
+						<p class="first">
+							<label for="productName">Product Name</label> <input type="text"
+								name="productName" id="productName" size="30" />
+						</p>
+						<p>
+							<label for="productPrice">Product Price</label> <input
+								type="text" name="productPrice" id="productPrice" size="30" />
+						</p>
+						<p>
+							<label for="Description">Product Description</label>
+							<textarea name="productDescription" id="productDescription"
+								cols="30" rows="10"></textarea>
+						</p>
 
-			<fieldset>
-				<legend>Add New Product</legend>
-				<p class="first">
-					<label for="productName">Product Name</label> <input type="text"
-						name="productName" id="productName" size="30" />
-				</p>
-				<p>
-					<label for="productPrice">Product Price</label> <input type="text"
-						name="productPrice" id="productPrice" size="30" />
-				</p>
-				<p>
-					<label for="Description">Product Description</label>
-					<textarea name="productDescription" id="productDescription"
-						cols="30" rows="10"></textarea>
-				</p>
+						<p align="left" class="submit">
+							<button type="submit">Send</button>
 
-				<p align="center" class="submit">
-					<button type="submit">Send</button>
-				</p>
+							<a href="ProductsTable.jsp"><button id="addbutton">Go
+									to Products Table</button></a>
 
-			</fieldset>
-		</form>
-		<a href="productsTable.jsp"><button id="addbutton">Add Another Product</button></a>
-	</div>
+
+						</p>
+
+					</fieldset>
+				</form>
+
+			</td>
+	</table>
 </body>
 </html>
