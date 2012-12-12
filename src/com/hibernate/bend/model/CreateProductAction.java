@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class CreateProductAction
  */
@@ -31,7 +32,7 @@ public class CreateProductAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+
 		Product product;
 		String productName = request.getParameter("productName");
 		String productPrice = request.getParameter("productPrice");
@@ -41,7 +42,6 @@ public class CreateProductAction extends HttpServlet {
 		
 		ProductsDAO dao = ProductsDAO.getInstance();
 		dao.addProduct(product);
-		
         getServletContext().getRequestDispatcher("/ProductsTable.jsp").forward(request,response);
 
 	}

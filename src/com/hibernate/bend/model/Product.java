@@ -11,6 +11,9 @@ public class Product {
 	private String productDesc;
 	private double productPrice;
 
+	public Product(int id){
+		productId = id;
+	}
 	public Product(String productName, String productDesc, double productPrice) {
 		super();
 		this.productName = productName;
@@ -20,6 +23,7 @@ public class Product {
 	public Product() {
 			super();
 		}
+	
 @Id
 	public int getProductId() {
 		return productId;

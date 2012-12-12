@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
-import org.hibernate.mapping.List;
 
 public class ProductsDAO implements IProductDAO {
 
@@ -20,15 +18,7 @@ public class ProductsDAO implements IProductDAO {
 		// TODO Auto-generated constructor stub
 	}
 	
-	private Product findProduct(double id) {
-		Iterator<Product> iter = products.iterator();
-		
-		while (iter.hasNext()) {
-			if (((Product) iter).getProductId() == id)
-				return (Product) iter;
-		}
-		return null;
-	}
+
 	
 	 public static ProductsDAO getInstance(){
 		if (instance == null){
@@ -36,6 +26,7 @@ public class ProductsDAO implements IProductDAO {
 		}
 		return instance;
 	}
+	 
 	@Override
 	public void addProduct(Product ob) {
 		SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
@@ -47,14 +38,22 @@ public class ProductsDAO implements IProductDAO {
 	}
 
 	@Override
-	public void delProduct(double pId) {
-		Product p = findProduct(pId);
-		
-		if (p != null)
-			products.remove(p);
+	public void delProduct(int pId) {
+		SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+		session.beginTransaction();
 
+		session.delete(new Product(pId));
+		session.getTransaction().commit();
+		session.close();
 	}
-
+	@Override
+	public Product getProductById(int pId) {
+		SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+		return	(Product) session.get(Product.class, pId); 
+		
+	}
 	@Override
 	public ArrayList<Product> getProdcts() {
 		try {
@@ -63,11 +62,16 @@ public class ProductsDAO implements IProductDAO {
 		anotherSession.beginTransaction();
 		ArrayList<Product> products =  (ArrayList<Product>) anotherSession.createQuery("from Product").list();
 		return products;
+		
 		} catch (Exception e)
 		{
 			e.printStackTrace();
 		}
 		return null;
 	}
+
+
+
+
 	
 }
