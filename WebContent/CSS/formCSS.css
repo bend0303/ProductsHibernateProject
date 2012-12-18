@@ -1,10 +1,10 @@
 body {
-	background: #f8f8f8;
 	font: 13px Trebuchet MS, Arial, Helvetica, Sans-Serif;
 	color: #333;
-	line-height: 160%;
+	line-height: 100%;
 	padding: 0;
 }
+
 
 #container {
 	margin: 0 auto;
@@ -43,6 +43,7 @@ body {
 }
 
 #form1 input,#form1 textarea {
+	background: #f8f8f8;
 	width: 252px;
 	border: 1px solid #ddd;
 	padding: 3px;

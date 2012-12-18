@@ -4,11 +4,13 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="CSS/formCSS.css" />
+<link rel="stylesheet" type="text/css" href="CSS/generalCSS.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Add a New Product</title>
 </head>
 <body>
-<div align="center">
+<jsp:include page="MenuBar.jsp" />
+<div class="wrapperDiv">
 	<table style="margin: auto;">
 		<tr>
 			<td>
@@ -40,7 +42,6 @@
 
 					</fieldset>
 				</form>
-
 			</td>
 	</table>
 	</div>

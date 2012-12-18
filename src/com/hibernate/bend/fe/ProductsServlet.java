@@ -1,4 +1,4 @@
-package com.hibernate.bend.model;
+package com.hibernate.bend.fe;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.hibernate.bend.model;
+package com.hibernate.bend.fe;
 
 import javax.persistence.Table;
 import javax.persistence.Id;

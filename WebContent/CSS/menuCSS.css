@@ -1,0 +1,76 @@
+#headerTable {
+	background: url(../images/header.png) top left repeat-x;
+	width: 650px;
+	vertical-align: bottom;
+}
+
+#bottomTable {
+	background: url(../images/tableBottom.png) top left repeat-x;
+}
+
+#topDiv {
+	background-color: #E6EAE9;
+	width: 800px;
+	height: 130px;
+	margin: 0px auto;
+}
+
+.navigation {
+	display: block;
+	float: left;
+	width: 100%;
+	border-bottom: 2px solid;
+	border-color: black;
+}
+
+.navigation * {
+	padding: 0;
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.navigation ul {
+	display: block;
+	float: left;
+}
+
+.navigation ul li {
+	list-style: none;
+	float: left;
+	margin: 0 0 0 5px;
+}
+
+.navigation ul li a {
+	background: url(../images/menu/nav_right_IE6.png) top right no-repeat
+		!important;
+	background: url(../images/menu/nav_right.png) top right no-repeat;
+	display: block;
+	padding: 0 13px 0 0;
+	color: #578ba0;
+	text-decoration: none
+}
+
+.navigation ul li.selected a,.navigation ul li.hover a {
+	background: url(../images/menu/nav_selected_right.png) top right
+		no-repeat !important;
+	background: url(../images/menu/nav_selected_right_IE6.png) top right
+		no-repeat;
+	color: #578ba0;
+}
+
+.navigation ul li a span {
+	background: url(../images/menu/nav_left.png) top left no-repeat
+		!important;
+	background: url(../images/menu/nav_left_IE6.png) top left no-repeat;
+	display: block;
+	padding: 15px 0px 10px 23px;
+}
+
+.navigation ul li.selected a span,.navigation ul li.hover a span {
+	background: url(../images/menu/nav_selected_left.png) top left no-repeat
+		!important;
+	background: url(../images/menu/nav_selected_left_IE6.png) top left
+		no-repeat;
+}

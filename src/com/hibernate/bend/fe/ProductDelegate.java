@@ -1,8 +1,10 @@
-package com.hibernate.bend.model;
+package com.hibernate.bend.fe;
 
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServlet;
+
+import com.hibernate.bend.be.ProductsDAO;
 
 public class ProductDelegate {
 	

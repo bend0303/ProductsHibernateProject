@@ -1,6 +1,9 @@
-package com.hibernate.bend.model;
+package com.hibernate.bend.be;
 
 import java.util.ArrayList;
+
+import com.hibernate.bend.fe.Product;
+
 
 public interface IProductDAO {
 

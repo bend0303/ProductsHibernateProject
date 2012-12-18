@@ -1,4 +1,4 @@
-package com.hibernate.bend.model;
+package com.hibernate.bend.be;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,9 +8,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
+import com.hibernate.bend.fe.Product;
+
+
 public class ProductsDAO implements IProductDAO {
 
-	private Collection<Product> products;
 	private static ProductsDAO instance = null;
 	
 	
@@ -27,7 +29,6 @@ public class ProductsDAO implements IProductDAO {
 		return instance;
 	}
 	 
-	@Override
 	public void addProduct(Product ob) {
 		SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
 		Session session = factory.openSession();
@@ -37,7 +38,6 @@ public class ProductsDAO implements IProductDAO {
 		session.close();
 	}
 
-	@Override
 	public void delProduct(int pId) {
 		SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
 		Session session = factory.openSession();
@@ -47,14 +47,14 @@ public class ProductsDAO implements IProductDAO {
 		session.getTransaction().commit();
 		session.close();
 	}
-	@Override
+
 	public Product getProductById(int pId) {
 		SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		return	(Product) session.get(Product.class, pId); 
 		
 	}
-	@Override
+
 	public ArrayList<Product> getProdcts() {
 		try {
 		SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
